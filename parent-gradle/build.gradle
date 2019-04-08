@@ -39,3 +39,21 @@ tasks.withType(JavaCompile) {
 task wrapper(type: Wrapper) {
     gradleVersion = '4.5-rc-1'
 }
+
+
+task hello() {
+    group = 'Welcome'
+    description = 'Produces a greeting'
+
+    doLast {
+        println 'Hello, World'
+    }
+}
+
+task taskX {
+    println 'taskX'
+}
+
+task taskY(dependsOn: 'taskX') {
+    println "taskY"
+}
