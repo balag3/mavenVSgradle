@@ -1,0 +1,6 @@
+task renameArtifacts (type: Copy, dependsOn:'build') {
+    from ('build/libs')
+    include 'grand-*.jar'
+    destinationDir file('project/')
+    rename 'grand-child-02-01-1.0-SNAPSHOT.jar', "project.jar"
+}

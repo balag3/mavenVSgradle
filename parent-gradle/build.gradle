@@ -57,3 +57,10 @@ task taskX {
 task taskY(dependsOn: 'taskX') {
     println "taskY"
 }
+
+task renameArtifacts (type: Copy) {
+    from ('build/libs')
+    include 'grand-*.jar'
+    destinationDir file('project/')
+    rename 'project-1.5.jar', "project.jar"
+}
